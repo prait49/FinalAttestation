@@ -122,11 +122,10 @@ public class MainController {
         } else {
             model.addAttribute("search_product", productRepository.findByTitleContainingIgnoreCase(search));
         }
-
         model.addAttribute("value_search", search);
         model.addAttribute("value_price_ot", ot);
         model.addAttribute("value_price_Do", Do);
-        return "/product/product";
+        return "/user/index";
     }
 
     @GetMapping("/cart/add/{id}")

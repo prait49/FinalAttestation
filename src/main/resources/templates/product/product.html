@@ -14,7 +14,7 @@
         <input type="text" id="search" name="search" th:value="*{value_search}">
         <p>Фильтр стоймости товара, Р</p>
         <div class="form-group">
-            <label for="ot" >От:</label>
+            <label for="ot">От:</label>
             <input type="text" name="ot" id="ot" th:value="*{value_price_ot}">
             <label for="Do">До:</label>
             <input type="text" name="Do" id="Do" th:value="*{value_price_Do}">
@@ -29,49 +29,38 @@
             </div>
             <p>Категория товаров: </p>
             <div class="btn-group">
-            <input type="radio" id="furniture" name="contract" value="furniture">
-            <label for="furniture">Мебель</label>
-            <input type="radio" id="appliances" name="contract" value="appliances">
-            <label for="appliances">Бытовая техника</label>
-            <input type="radio" id="clothes" name="contract" value="clothes">
-            <label for="clothes">Одежда</label>
+                <input type="radio" id="furniture" name="contract" value="furniture">
+                <label for="furniture">Мебель</label>
+                <input type="radio" id="appliances" name="contract" value="appliances">
+                <label for="appliances">Бытовая техника</label>
+                <input type="radio" id="clothes" name="contract" value="clothes">
+                <label for="clothes">Одежда</label>
             </div>
             <input type="submit" value="Найти">
         </div>
     </fieldset>
+    <hr>
 </form>
 
-
-<!--<div class="product-container">-->
-<!--    <div th:each="product : ${search_product}" class="product">-->
-<!--        <a th:href="@{/product/info/{id}(id=${product.getId()})}">-->
-<!--            <img th:src="'/img/' +${product.imageList[0].getFileName()}" alt="Product Image">-->
-<!--            <h4 th:text="${product.getTitle()}"></h4>-->
-<!--            <p th:text="'Цена: ' +${product.getPrice()}"></p>-->
-<!--        </a>-->
-<!--    </div>-->
-<!--</div>-->
-<hr>
 <h3>Результат поиска, сортировки и фильтрации</h3>
 <div th:each="product : ${search_product}" class="productSearch">
-    <img th:src="'/img/' +${product.imageList[0].getFileName()}" alt="Product Image">
-    <br>
+    <img th:src="'/img/' +${product.imageList[0].getFileName()}">
     <a th:href="@{/product/info/{id}(id=${product.getId()})}">
-    <h4 th:text="${product.getTitle()}"></h4>
+        <h4 th:text="${product.getTitle()}"></h4>
         <p th:text="'Цена: ' +${product.getPrice()}"></p>
     </a>
-
-    <hr>
 </div>
-
+<hr>
 <h3> Доступные товары: </h3>
-<div th:each="product : ${products}">
-  <img th:src="'/img/' +${product.imageList[0].getFileName()}" width="300px">
-  <br>
-  <a th:href="@{/product/info/{id}(id=${product.getId()})}"
-  th:text="${product.getTitle()}"></a>
-  <p th:text="'Цена: ' +${product.getPrice()}"></p>
-  <hr>
+<div class="product-container">
+<div th:each="product : ${products}" class="product">
+    <a th:href="@{/product/info/{id}(id=${product.getId()})}">
+    <img th:src="'/img/' +${product.imageList[0].getFileName()}">
+    <h4 th:text="${product.getTitle()}"></h4>
+    <p th:text="'Цена: ' +${product.getPrice()}"></p>
+    </a>
 </div>
+</div>
+
 </body>
 </html>
