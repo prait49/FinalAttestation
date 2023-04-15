@@ -1,0 +1,192 @@
+/*Настройка поля поиска*/
+body{
+    font-family: Arial, sans-serif;
+}
+h3{
+    text-align: center;
+    font-size: 32px;
+}
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+legend {
+    font-size: 1.2em;
+    font-weight: bold;
+}
+
+
+label[ id="ot1"] {
+    display: block;
+    margin-bottom: 0.5em;
+}
+
+
+input[id="search"] {
+    padding: 0.5em;
+    border-radius: 5px;
+    border: none;
+    box-shadow: 0 0 2px rgba(0, 0, 0, 0.3);
+    width: 100%;
+}
+
+
+input[type="radio"] {
+    margin-right: 0.5em;
+}
+
+
+input[type="submit"] {
+    background-color: #4CAF50; /* Green */
+    border: none;
+    color: white;
+    padding: 0.5em;
+    width: 10em;
+    font-size: 17px;
+    border-radius: 5px;
+    box-shadow: 0 0 2px rgba(0, 0, 0, 0.3);
+    cursor: pointer;
+    margin-left: 4em;
+}
+
+
+fieldset {
+    border-radius: 10px;
+    padding: 2em;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+.form-group {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+}
+.form-group label {
+    font-weight: bold;
+}
+.form-group input {
+    padding: 5px;
+    border-radius: 10px;
+    border: 1px solid #ccc;
+    font-size: 20px;
+}
+.form-group input:focus {
+    border-color: #000000;
+}
+
+ /*Изменение выбора категорий в кноки */
+
+.btn-group {
+    display: inline-flex;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.btn-group label {
+    padding: 10px;
+    cursor: pointer;
+    background-color: #f5f5f5;
+    border-right: 1px solid #ccc;
+    transition: background-color 0.3s ease-in-out;
+}
+
+
+.btn-group input[type="radio"]:checked + label {
+    background-color: #4cae50;
+    color: #fff;
+}
+
+.btn-group input[type="radio"] {
+    display: none;
+}
+
+hr {
+    border-top: 3px solid #3498db;
+    margin: 20px 0;
+}
+
+
+
+
+ .productSearch {
+     display: flex;
+     align-items: center;
+     margin-bottom: 20px;
+     padding: 10px;
+     border-radius: 5px;
+     box-shadow: 0 0 5px #ccc;
+ }
+
+.productSearch img {
+    margin-right: 20px;
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+}
+
+.productSearch h4 {
+    margin: 0;
+    font-size: 20px;
+    font-weight: bold;
+    color: #4cad50;
+}
+
+.productSearch p {
+    margin: 0;
+    font-size: 16px;
+    color: #333;
+}
+
+.productSearch a {
+    text-decoration: none;
+}
+
+
+/* .product-container {*/
+/*     display: flex;*/
+/*     flex-direction: row;*/
+/*     flex-wrap: wrap;*/
+/* }*/
+
+/*.product {*/
+/*    display: flex;*/
+/*    flex-direction: column;*/
+/*    align-items: center;*/
+/*    margin: 10px;*/
+/*    padding: 10px;*/
+/*    border-radius: 5px;*/
+/*    box-shadow: 0 0 5px #ccc;*/
+/*    min-width: 250px;*/
+/*    max-width: 300px;*/
+/*}*/
+
+/*.product img {*/
+/*    margin-bottom: 10px;*/
+/*    width: 100%;*/
+/*    height: auto;*/
+/*    object-fit: cover;*/
+/*    border-radius: 5px;*/
+/*}*/
+
+/*.product h4 {*/
+/*    margin: 0;*/
+/*    font-size: 18px;*/
+/*    font-weight: bold;*/
+/*    color: #3498db;*/
+/*    text-align: center;*/
+/*}*/
+
+/*.product p {*/
+/*    margin: 0;*/
+/*    font-size: 16px;*/
+/*    color: #333;*/
+/*    text-align: center;*/
+/*}*/
+
+/*.product a {*/
+/*    text-decoration: none;*/
+/*}*/

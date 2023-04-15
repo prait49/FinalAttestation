@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Информация о пользователях</title>
+</head>
+<body>
+<div th:each="person : ${persons}">
+<p th:text="'Id пользоваля : ' + ${person.getId()}"></p>
+<p th:text="'Логин пользователя: ' + ${person.getLogin()}"></p>
+<p th:text="'Пароль пользователя: ' + ${person.getPassword()}"></p>
+<p th:text="'Роль пользователя: ' + ${person.getRole()}"></p>
+
+<a th:href="@{/admin/persons/edit/{id}(id=${person.getId()})}">Редактирование данных пользователя</a>
+<input type="hidden" th:name= "${_csrf.parameterName}" th:value="${_csrf.token}">
+<a th:href="@{/admin/persons/delete/{id}(id=${person.getId()})}">Удаление пользователя</a>
+<hr>
+</div>
+</body>
+</html>

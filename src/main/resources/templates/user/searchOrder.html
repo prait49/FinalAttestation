@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Просмотр списка заказов </title>
+</head>
+<body>
+<h3>Просмотр списка заказов</h3>
+<form th:method="POST" th:action="@{/admin/order/edit/search}">
+<fieldset>
+    <label for="search">Поиск заказа по последним 4 цифрам</label>
+    <input type="text" id="search" name="search" th:value="*{value_search}">
+        <br>
+        <br>
+        <input type="submit" value="Найти">
+    </div>
+</fieldset>
+    <h3>Заказы котоыре были найдены по запросу  </h3>
+</form>
+<div  th:method="POST" th:each="order : ${search_order}" >
+    <h3 th:text="'Заказ №' + ${order.getNumber()}"></h3>
+    <img th:src="'/img/' + ${order.getProduct().getImageList()[0].getFileName()}" width="300px"></p>
+    <p th:text="'Наименование: ' + ${order.getProduct().getTitle()}"></p>
+    <p th:text="'Количество: ' + ${order.getCount()}"></p>
+    <p th:text="'Цена: ' + ${order.getPrice()}"></p>
+    <p th:text="'Дата заказа: ' + ${#temporals.format(order.getDateTime(), 'dd-MMM-yyyy')}"></p>
+    <p th:text="'Cтатус: ' + ${order.getStatus()}"></p>
+    <a th:href="@{/admin/order/edit/{id}(id=${order.getId()})}">Редактирование заказа</a>
+    <hr>
+
+</div>
+
+<h3>Все заказы  </h3>
+<div th:each="order : ${orders}">
+    <h3 th:text="'Заказ №' + ${order.getNumber()}"></h3>
+    <img th:src="'/img/' + ${order.getProduct().getImageList()[0].getFileName()}" width="300px"></p>
+    <p th:text="'Наименование: ' + ${order.getProduct().getTitle()}"></p>
+    <p th:text="'Количество: ' + ${order.getCount()}"></p>
+    <p th:text="'Цена: ' + ${order.getPrice()}"></p>
+    <p th:text="'Дата заказа: ' + ${#temporals.format(order.getDateTime(), 'dd-MMM-yyyy')}"></p>
+    <p th:text="'Cтатус: ' + ${order.getStatus()}"></p>
+    <br>
+    <br>
+    <a th:href="@{/admin/order/delete/{id}(id=${order.getId()})}">Удалить заказ</a>
+    <br>
+    <br>
+    <a th:href="@{/admin/order/edit/{id}(id=${order.getId()})}">Редактирование заказа</a>
+
+    <hr>
+</div>
+ </body>
+</html>

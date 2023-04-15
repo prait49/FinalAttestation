@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form th:method="POST" th:action="@{/admin/persons/edit/{id}(id=${persons.getId()})}" th:object="${persons}">
+  <p th:text="'Id пользовалея : ' + ${persons.getId()}"></p>
+  <p th:text="'Логин пользователя: ' + ${persons.getLogin()}"></p>
+
+  <p th:text="'Роль пользователя: ' + ${persons.getRole()}"></p>
+    <label for="role">Изменить роль пользователя: </label>
+    <select id="role" name="role" th:field="*{role}">
+        <option value="ROLE_ADMIN">Администратор</option>
+        <option value="ROLE_USER">Пользователь</option>
+    </select>
+  <input type="submit" value="Редактировать">
+  <hr>
+
+</form>
+
+</body>
+</html>
