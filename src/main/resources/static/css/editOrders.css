@@ -1,0 +1,93 @@
+body{
+    font-family: Arial, sans-serif;
+}
+h3{
+    text-align: center;
+    font-size: 32px;
+}
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.button{
+    display: flex;
+    justify-content: center;
+    margin: 5px;
+    align-items: center;
+
+}
+.button input{
+    width: 19em;
+    font-size: 10px;
+    border-radius: 10px;
+    box-shadow: 0 0 2px rgb(0 0 0 / 30%);
+    cursor: pointer;
+    margin: 1em 3em 0 3em;
+    border: 1px solid #0000004d;
+    background: #459a48;
+    color: white;
+}
+.button input:hover{
+    transform: translate(0, 2px);
+    background-color: #215b25;
+}
+
+
+.orders-container {
+    display: flex;
+    justify-content: center;
+}
+
+.orders {
+    margin: 10px;
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 0 0 5px #ccc;
+    max-width: 400px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.orders img {
+    margin-bottom: 10px;
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    border-radius: 5px;
+}
+
+.orders h4 {
+    margin: 0;
+    font-size: 18px;
+    font-weight: bold;
+    text-align: center;
+}
+
+.orders p {
+    margin: 5px;
+    text-align: center;
+}
+
+.orders a:hover {
+    color: #4cad50 ;
+    transform: translate(0, 2px);
+}
+.edit[type="submit"] {
+    background-color: #4CAF50;
+    border: none;
+    color: white;
+    padding: 0.5em;
+    width: 10em;
+    font-size: 17px;
+    border-radius: 5px;
+    box-shadow: 0 0 2px rgba(0, 0, 0, 0.3);
+    cursor: pointer;
+    margin: 10px;
+}
+.edit[type="submit"]:hover{
+    background-color: #215b25;
+    transform: translate(0, 2px);
+}

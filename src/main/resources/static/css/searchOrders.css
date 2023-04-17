@@ -1,0 +1,164 @@
+/*Настройка поля поиска*/
+body{
+    font-family: Arial, sans-serif;
+}
+h3{
+    text-align: center;
+    font-size: 32px;
+}
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+input[id="search"] {
+    padding: 0.5em;
+    border-radius: 5px;
+    border: none;
+    box-shadow: 0 0 2px rgba(0, 0, 0, 0.3);
+    width: 100%;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.searching[type="submit"] {
+    background-color: #4CAF50;
+    border: none;
+    color: white;
+    padding: 0.5em;
+    width: 10em;
+    font-size: 17px;
+    border-radius: 5px;
+    box-shadow: 0 0 2px rgba(0, 0, 0, 0.3);
+    cursor: pointer;
+}
+.searching[type="submit"]:hover{
+    background-color: #215b25;
+    transform: translate(0, 2px);
+}
+
+
+fieldset {
+    border-radius: 10px;
+    padding: 2em;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    margin: 20px;
+}
+
+
+hr {
+    width: 95%;
+    margin-top: 24px;
+    border: 0;
+    height: 0;
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+/*Результат поиска, сортировки и фильтрации*/
+.ordersSearch {
+    align-items: center;
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 0 0 5px #ccc;
+    display: flex;
+    margin: 0 10% 20px 10%
+}
+
+
+.ordersSearch img {
+    margin-right: 20px;
+    width: 170px;
+}
+
+ h4 {
+    margin: 5px;
+    font-size: 25px;
+    font-weight: bold;
+     text-align: center;
+}
+
+.ordersSearch p {
+    margin: 5px;
+}
+
+
+/*Доступные товары*/
+
+.orders-container {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.orders {
+    margin: 10px;
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 0 0 5px #ccc;
+    min-width: 100px;
+    max-width: 250px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.orders img {
+    margin-bottom: 10px;
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    border-radius: 5px;
+}
+
+.orders h4 {
+    margin: 0;
+    font-size: 18px;
+    font-weight: bold;
+    text-align: center;
+}
+
+.orders p {
+    margin: 5px;
+    text-align: center;
+}
+
+.orders a:hover {
+    color: #4cad50 ;
+    transform: translate(0, 2px);
+}
+
+.button{
+    display: flex;
+    justify-content: center;
+}
+.button input{
+    width: 19em;
+    font-size: 10px;
+    border-radius: 10px;
+    box-shadow: 0 0 2px rgb(0 0 0 / 30%);
+    cursor: pointer;
+    margin: 1em 3em 0 3em;
+    border: 1px solid #0000004d;
+    background: #459a48;
+    color: white;
+}
+h1{
+    text-align: center;
+}
+.add{
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #4cac50;
+    color: #fff;
+    border-radius: 10px;
+    text-decoration: none;
+    margin: 5px;
+}
+.add:hover {
+    background-color: #215b25;
+    color: #fff;
+    transform: translate(0, 2px);
+}

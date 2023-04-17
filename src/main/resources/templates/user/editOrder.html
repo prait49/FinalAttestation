@@ -3,9 +3,28 @@
 <head>
     <meta charset="UTF-8">
     <title>Редактирование заказа</title>
+    <link th:href="@{/css/editOrders.css}" type="text/css"
+          rel="stylesheet"/>
 </head>
 <body>
-<form th:method="POST" th:action="@{/admin/order/edit/{id}(id=${order.getId()})}" th:object="${order}">
+<h3>Редактирование заказа</h3>
+<div class="button">
+    <form method="get" th:action="@{/admin}">
+        <input type="submit" value="Личный кабинет">
+    </form>
+    <form method="get" th:action="@{/admin/order/edit}">
+        <input type="submit" value="Просмотр заказов пользователей">
+    </form>
+    <form method="get" th:action="@{/admin/persons}">
+        <input type="submit" value="Посмотреть данные о пользователях">
+    </form>
+    <form method="post" action="/logout">
+        <input type="hidden" th:name="${_csrf.parameterName}" th:value="${_csrf.token}">
+        <input type="submit" value="Выйти из личного кабинета">
+    </form>
+</div>
+<div class="orders-container">
+<form th:method="POST" th:action="@{/admin/order/edit/{id}(id=${order.getId()})}" th:object="${order}" class="orders">
     <h3 th:text="'Заказ №' + ${order.getNumber()}"></h3>
     <img th:src="'/img/' + ${order.getProduct().getImageList()[0].getFileName()}" width="300px"></p>
     <p th:text="'Наименование: ' + ${order.getProduct().getTitle()}"></p>
@@ -13,16 +32,13 @@
     <p th:text="'Цена: ' + ${order.getPrice()}"></p>
     <p th:text="'Дата заказа: ' + ${#temporals.format(order.getDateTime(), 'dd-MMM-yyyy')}"></p>
     <p th:text="'Cтатус: ' + ${order.getStatus()}"></p>
-
     <select id="status" name="status" th:field="*{status}">
         <div th:each="element : ${status}">
             <option th:text="${element.name()}" th:value="${element.name()}">
         </div>
     </select>
-    <br>
-    <br>
-    <input type="submit" value="Редактировать">
+    <input type="submit" value="Редактировать" class="edit">
 </form>
-
+</div>
 </body>
 </html>
