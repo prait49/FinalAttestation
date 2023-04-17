@@ -1,21 +1,34 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <link th:href="@{/css/cart.css}" type="text/css" rel="stylesheet"/>
     <meta charset="UTF-8">
     <title>Корзина</title>
 </head>
 <body>
 <h3>Корзина товаров</h3>
-<div th:each="product : ${cart_product}">
-    <img th:src="'/img/' +${product.imageList[0].getFileName()}" width="300px">
-    <br>
-    <a th:href="@{/product/info/{id}(id=${product.getId()})}"
-       th:text="${product.getTitle()}"></a>
-    <p th:text="'Цена: ' +${product.getPrice()}"></p>
-    <a th:href="@{/cart/delete/{id}(id=${product.getId()})}">Удалить</a>
+<div class="button">
+    <form method="get" th:action="@{/person_account}">
+        <input type="submit" value="Личный кабинет"/>
+    </form>
+    <form method="get" th:action="@{/orders}">
+        <input type="submit" value="Заказы"/>
+    </form>
+</div>
+<div class="product-container">
+<div th:each="product : ${cart_product}" class="product">
+    <a th:href="@{/product/info/{id}(id=${product.getId()})}" class="productA">
+        <img th:src="'/img/' +${product.imageList[0].getFileName()}">
+        <h4 th:text="${product.getTitle()}"></h4>
+        <p th:text="'Цена: ' +${product.getPrice()}"></p>
+    </a></p>
+    <a  class="delete" th:href="@{/cart/delete/{id}(id=${product.getId()})}">Удалить из корзины </a>
     <hr>
 </div>
-<h3 th:text="'Итоговая цена: '+${price}"></h3>
-<a href="/order/create">Оформить заказ</a>
+</div>
+<h3 th:text="'Итоговая цена: '+${price}+' рублей'"></h3>
+<div class="center">
+    <a class="add" href="/order/create">Оформить заказ</a>
+</div>
 </body>
 </html>

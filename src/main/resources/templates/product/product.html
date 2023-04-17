@@ -43,7 +43,7 @@
 </form>
 
 <h3>Результат поиска, сортировки и фильтрации</h3>
-<div th:each="product : ${search_product}" class="productSearch">
+<div th:each="product : ${search_product}" class="productSearchNo" >
     <img th:src="'/img/' +${product.imageList[0].getFileName()}">
     <a th:href="@{/product/info/{id}(id=${product.getId()})}">
         <h4 th:text="${product.getTitle()}"></h4>
@@ -53,13 +53,13 @@
 <hr>
 <h3> Доступные товары: </h3>
 <div class="product-container">
-<div th:each="product : ${products}" class="product">
-    <a th:href="@{/product/info/{id}(id=${product.getId()})}">
-    <img th:src="'/img/' +${product.imageList[0].getFileName()}">
-    <h4 th:text="${product.getTitle()}"></h4>
-    <p th:text="'Цена: ' +${product.getPrice()}"></p>
-    </a>
-</div>
+    <div th:each="product : ${products}" class="product">
+        <a th:href="@{/product/info/{id}(id=${product.getId()})}" class="productA">
+            <img th:src="'/img/' +${product.imageList[0].getFileName()}">
+            <h4 th:text="${product.getTitle()}"></h4>
+            <p th:text="'Цена: ' +${product.getPrice()}"></p>
+        </a>
+    </div>
 </div>
 
 </body>

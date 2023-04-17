@@ -116,36 +116,51 @@ hr {
     border-bottom: 1px solid rgba(255, 255, 255, 0.3);
 }
 
+/*Результат поиска, сортировки и фильтрации*/
+ .productSearch, .productSearchNo {
 
- .productSearch {
-     display: flex;
      align-items: center;
      margin-bottom: 20px;
      padding: 10px;
      border-radius: 5px;
      box-shadow: 0 0 5px #ccc;
- }
 
-.productSearch img {
+ }
+.productSearch{
+    display: flex;
+    justify-content: space-between;
+    margin: 0 10% 20px 10%;
+}
+.productSearchNo{
+    display: flex;
+    justify-content: flex-start;
+}
+
+.productSearch img, .productSearchNo img {
     margin-right: 20px;
     width: 170px;
 }
 
-.productSearch h4 {
+.productSearch h4, .productSearchNo h4 {
     margin: 5px;
     font-size: 25px;
     font-weight: bold;
 }
 
-.productSearch p {
+.productSearch p, .productSearchNo p {
     margin: 5px;
 }
 
-.productSearch a {
+a.Green {
+    text-decoration: none;
+    color: black;
+}
+.productSearchNo a  {
     text-decoration: none;
     color: #1c1c1c;
 }
-.productSearch a:hover {
+
+.productSearchNo a:hover, a.Green:hover{
     color: #4cad50 ;
 }
 
@@ -153,6 +168,8 @@ hr {
 
 
 
+
+/*Доступные товары*/
 
  .product-container {
      display: flex;
@@ -166,6 +183,10 @@ hr {
     box-shadow: 0 0 5px #ccc;
     min-width: 100px;
     max-width: 250px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
 }
 
 .product img {
@@ -184,15 +205,15 @@ hr {
 }
 
 .product p {
-    margin: 0;
+    margin: 5px;
     text-align: center;
 }
 
-.product a {
+.productA {
     color: #1c1c1c;
     text-decoration: none;
 }
-.product a:hover {
+.productA:hover {
     color: #4cad50 ;
 }
 
@@ -207,7 +228,20 @@ hr {
     box-shadow: 0 0 2px rgb(0 0 0 / 30%);
     cursor: pointer;
     margin: 1em 3em 0 3em;
+    border: 1px solid #0000004d;
 }
 h1{
     text-align: center;
+}
+.add{
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #4cac50;
+    color: #fff;
+    border-radius: 10px;
+    text-decoration: none;
+}
+.add:hover {
+    background-color: #215b25;
+    color: #fff;
 }
