@@ -4,9 +4,18 @@
     <meta charset="UTF-8">
     <title>Заказы</title>
     <link th:href="@{/css/orders.css}" type="text/css" rel="stylesheet"/>
+
 </head>
 <body>
-<h3>Зазказы</h3>
+<h3>Заказы</h3>
+<div class="button">
+    <form method="get" th:action="@{/person_account}">
+        <input type="submit" value="Личный кабинет"/>
+    </form>
+    <form method="get" th:action="@{/cart}">
+        <input type="submit" value="Корзина товаров"/>
+    </form>
+</div>
 <div class="product-container" >
     <div th:each="order : ${orders}" class="product">
         <h4 th:text="'Заказ №' + ${order.getNumber()}"></h4>

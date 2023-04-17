@@ -5,41 +5,41 @@ h3{
     text-align: center;
     font-size: 32px;
 }
-.product-container {
-    display: flex;
-    flex-wrap: wrap;
-}
-.product {
-    margin: 10px;
+.container{
     padding: 10px;
     border-radius: 10px;
     box-shadow: 0 0 5px #ccc;
-    min-width: 100px;
-    max-width: 250px;
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: space-between;
+    width: 80%;
+    margin: 10px 10px 10px 10%;
 }
 
-.product img {
-    margin-bottom: 10px;
+.container img {
     width: 100%;
-    height: auto;
     object-fit: cover;
-    border-radius: 5px;
+    border-radius: 70px;
 }
 
-.product h4 {
-    margin: 0;
+.container h4 {
     font-size: 18px;
-    font-weight: bold;
-    text-align: center;
 }
 
-.product p {
+.container p {
     margin: 5px;
     text-align: center;
+}
+.image{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    flex-direction: row;
+    align-content: space-around;
+    align-items: center;
+}
+.image div{
+    margin: 15px;
 }
 .button{
     display: flex;
@@ -61,4 +61,17 @@ h3{
 .button input:hover{
 
     background-color: #215b25;
+}
+.add{
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #4cac50;
+    color: #fff;
+    border-radius: 10px;
+    text-decoration: none;
+    font-size: 30px;
+}
+.add:hover {
+    background-color: #215b25;
+    color: #fff;
 }

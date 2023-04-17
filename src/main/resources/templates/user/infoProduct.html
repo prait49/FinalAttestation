@@ -1,11 +1,23 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Инфомация о товаре </title>
+    <meta charset="UTF-8">
+    <title>Инфомация о товаре </title>
+    <link th:href="@{/css/infoProduct.css}" type="text/css" rel="stylesheet"/>
 </head>
 <body>
 <h3>Информация о товаре: </h3>
+<div class="button">
+    <form method="get" th:action="@{/person_account}">
+        <input type="submit" value="Личный кабинет"/>
+    </form>
+    <form method="get" th:action="@{/cart}">
+        <input type="submit" value="Корзина товаров"/>
+    </form>
+    <form method="get" th:action="@{/orders}">
+        <input type="submit" value="Заказы"/>
+    </form>
+</div>
 <p th:text="'Наименование: '+${product.getTitle()}"></p>
 <p th:text="'Описание: '+${product.getDescription()}"></p>
 <p th:text="'Цена: '+${product.getPrice()}"></p>
@@ -13,8 +25,9 @@
 <p th:text="'Продавец: '+${product.getSeller()}"></p>
 <p th:text="'Категория: '+${product.getCategory().getName()}"></p>
 <div th:each="img : ${product.getImageList()}">
-  <img th:src="'/img/'+${img.getFileName()}">
+    <img th:src="'/img/'+${img.getFileName()}">
 </div>
+
 
 
 </body>
