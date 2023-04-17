@@ -1,0 +1,86 @@
+.center{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 5px;
+    padding: 5px;
+}
+
+body{
+    font-family: Arial, sans-serif;
+}
+h3{
+    text-align: center;
+    font-size: 32px;
+}
+  form#POST{
+      margin: 10px;
+      padding: 10px;
+      border-radius: 10px;
+      box-shadow: 0 0 5px #ccc;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      min-width: 44em;
+  }
+
+form label {
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+form input,
+form textarea#seller,
+form select {
+    resize: none;
+    padding: 5px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: 100%;
+}
+form textarea#description {
+    padding: 5px;
+    margin-bottom: 10px;
+    box-sizing: border-box;
+    width: 100%;
+    height: 200px;
+    resize: none;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+form input#edit[type="submit"],
+form input#ADD[type="submit"] {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    padding: 10px 20px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+form input#edit[type="submit"]:hover,
+form input#ADD[type="submit"]:hover {
+    background-color: #3e8e41;
+    transform: translate(0, 2px);
+}
+.button{
+    display: flex;
+    justify-content: center;
+}
+.button input{
+    width: 19em;
+    font-size: 10px;
+    border-radius: 10px;
+    box-shadow: 0 0 2px rgb(0 0 0 / 30%);
+    cursor: pointer;
+    margin: 1em 3em 0 3em;
+    border: 1px solid #0000004d;
+    background: #459a48;
+    color: white;
+    padding: 1px;
+}
+.button input:hover{
+    background: #215b25;
+    transform: translate(0, 2px);
+}
