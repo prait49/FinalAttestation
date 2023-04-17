@@ -2,23 +2,43 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Редактирование данных пользователя</title>
+    <link th:href="@{/css/persons.css}" type="text/css" rel="stylesheet"/>
 </head>
 <body>
-<form th:method="POST" th:action="@{/admin/persons/edit/{id}(id=${persons.getId()})}" th:object="${persons}">
-  <p th:text="'Id пользовалея : ' + ${persons.getId()}"></p>
-  <p th:text="'Логин пользователя: ' + ${persons.getLogin()}"></p>
+<h3>Редактирование данных пользователя</h3>
+<div class="button">
+    <form method="get" th:action="@{/admin}">
+        <input type="submit" value="Личный кабинет">
+    </form>
+    <form method="get" th:action="@{/admin/order/edit}">
+        <input type="submit" value="Просмотр заказов пользователей">
+    </form>
+    <form method="get" th:action="@{/admin/persons}">
+        <input type="submit" value="Посмотреть данные о пользователях">
+    </form>
+    <form method="post" action="/logout">
+        <input type="hidden" th:name="${_csrf.parameterName}" th:value="${_csrf.token}">
+        <input type="submit" value="Выйти из личного кабинета">
+    </form>
+</div>
+    <form th:method="POST" th:action="@{/admin/persons/edit/{id}(id=${persons.getId()})}" th:object="${persons}" class=persons>
+        <div>
+            <p th:text="'Id пользовалея : ' + ${persons.getId()}"></p>
+            <p th:text="'Логин пользователя: ' + ${persons.getLogin()}"></p>
+            <p th:text="'Роль пользователя: ' + ${persons.getRole()}"></p>
+        </div>
+        <div>
+            <label for="role">Изменить роль пользователя: </label>
+            <select id="role" name="role" th:field="*{role}">
+                <option value="ROLE_ADMIN">Администратор</option>
+                <option value="ROLE_USER">Пользователь</option>
+            </select>
+            <input type="submit" value="Редактировать" class="edit">
+        </div>
 
-  <p th:text="'Роль пользователя: ' + ${persons.getRole()}"></p>
-    <label for="role">Изменить роль пользователя: </label>
-    <select id="role" name="role" th:field="*{role}">
-        <option value="ROLE_ADMIN">Администратор</option>
-        <option value="ROLE_USER">Пользователь</option>
-    </select>
-  <input type="submit" value="Редактировать">
-  <hr>
+    </form>
 
-</form>
 
 </body>
 </html>

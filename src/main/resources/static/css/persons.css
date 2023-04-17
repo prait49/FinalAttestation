@@ -56,3 +56,19 @@ a:hover {
     transform: translate(0, 2px);
     background-color: #215b25;
 }
+.edit[type="submit"] {
+    background-color: #4CAF50;
+    border: none;
+    color: white;
+    padding: 0.5em;
+    width: 10em;
+    font-size: 17px;
+    border-radius: 5px;
+    box-shadow: 0 0 2px rgba(0, 0, 0, 0.3);
+    cursor: pointer;
+    margin-left: 40px;
+}
+.edit[type="submit"]:hover{
+    background-color: #215b25;
+    transform: translate(0, 2px);
+}
