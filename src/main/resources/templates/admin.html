@@ -3,29 +3,56 @@
 <head>
     <meta charset="UTF-8">
     <title>Личный кабинет администратора</title>
+    <link th:href="@{/css/admin.css}" type="text/css" rel="stylesheet"/>
 </head>
 <body>
 
 <h1>Личный кабинет администратора</h1>
-<form method="post" action="/logout">
-    <input type="hidden" th:name= "${_csrf.parameterName}" th:value="${_csrf.token}">
-    <button type="submit">Выйти из личного кабинета</button>
+<div class="button">
+<form method="get" th:action="@{/admin/product/add}">
+    <input type="submit" value="Добавить товар">
 </form>
-<a href="admin/product/add">Добавить товар</a>
-<a href="admin/order/edit">Просмотр заказов пользователей</a>
-<a href="admin/persons"> Посмотреть данные о пользователях</a>
+<form method="get" th:action="@{/admin/order/edit}">
+    <input type="submit" value="Просмотр заказов пользователей">
+</form>
+<form method="get" th:action="@{admin/persons}">
+    <input type="submit" value="Посмотреть данные о пользователях">
+</form>
+<form method="post" action="/logout">
+    <input type="hidden" th:name="${_csrf.parameterName}" th:value="${_csrf.token}">
+    <input type="submit" value="Выйти из личного кабинета">
+</form>
+</div>
+<!--<a href="admin/product/add">Добавить товар</a>-->
+<!--<a href="admin/order/edit">Просмотр заказов пользователей</a>-->
+<!--<a href="admin/persons"> Посмотреть данные о пользователях</a>-->
 <hr>
-<div th:each="product : ${products}">
-    <p th:text="'Наименование: ' + ${product.getTitle()}"></p>
-    <p th:text="'Описание: ' + ${product.getDescription()}"></p>
-    <p th:text="'Цена: ' + ${product.getPrice()}"></p>
-    <p th:text="'Cклад: ' + ${product.getWarehouse()}"></p>
-    <p th:text="'Продавец: ' + ${product.getSeller()}"></p>
-    <p th:text="'Категория: ' + ${product.getCategory().getName()}"></p>
-    <a th:href="@{/admin/product/edit/{id}(id=${product.getId()})}">Редактирование товара</a>
-    <input type="hidden" th:name= "${_csrf.parameterName}" th:value="${_csrf.token}">
-    <a th:href="@{/admin/product/delete/{id}(id=${product.getId()})}">Удаление товара</a>
-    <hr>
+<div class="container" th:each="product : ${products}">
+    <div class="IMAGE">
+        <img th:src="'/img/' +${product.imageList[0].getFileName()}">
+    </div>
+    <div class="Name">
+        <h4 th:text="'Наименование: ' + ${product.getTitle()}"></h4>
+    </div>
+    <div class="price">
+        <p th:text="'Цена: ' + ${product.getPrice()}"></p>
+        <p th:text="'Cклад: ' + ${product.getWarehouse()}"></p>
+        <p th:text="'Продавец: ' + ${product.getSeller()}"></p>
+        <p th:text="'Категория: ' + ${product.getCategory().getName()}"></p>
+    </div>
+    <div class="description">
+        <p th:text="'Описание: ' + ${product.getDescription()}"></p>
+    </div>
+    <div class="link">
+        <a class="add" th:href="@{/admin/product/edit/{id}(id=${product.getId()})}">Редактирование товара</a>
+    </div>
+    <div class="link2">
+        <a  class="add"th:href="@{/admin/product/delete/{id}(id=${product.getId()})}">Удаление товара</a>
+    </div>
+</div>
+    <input  type="hidden" th:name= "${_csrf.parameterName}" th:value="${_csrf.token}">
+
+</div>
 </div>
 </body>
 

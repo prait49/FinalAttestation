@@ -42,6 +42,7 @@ input[type="submit"] {
 }
 input[type="submit"]:hover {
     background-color: #3e8e41;
+    transform: translate(0, 2px);
 }
 .error-message {
     color: #f00;
@@ -75,4 +76,5 @@ a {
 }
 .product-button:hover{
     background-color: #27672a;
+    transform: translate(0, 2px);
 }

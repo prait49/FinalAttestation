@@ -59,7 +59,7 @@ h3{
     border: 1px solid #0000004d;
 }
 .button input:hover{
-
+    transform: translate(0, 2px);
     background-color: #215b25;
 }
 .add{
@@ -72,6 +72,7 @@ h3{
     font-size: 30px;
 }
 .add:hover {
+    transform: translate(0, 2px);
     background-color: #215b25;
     color: #fff;
 }

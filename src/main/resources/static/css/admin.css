@@ -1,0 +1,101 @@
+
+body{
+    font-family: Arial, sans-serif;
+}
+h3{
+    text-align: center;
+    font-size: 32px;
+}
+
+hr {
+    width: 95%;
+    margin-top: 24px;
+    border: 0;
+    height: 0;
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+. h4 {
+    margin: 5px;
+    font-size: 25px;
+    font-weight: bold;
+}
+
+.button{
+    display: flex;
+    justify-content: center;
+}
+.button input{
+    width: 19em;
+    font-size: 10px;
+    border-radius: 10px;
+    box-shadow: 0 0 2px rgb(0 0 0 / 30%);
+    cursor: pointer;
+    margin: 1em 3em 0 3em;
+    border: 1px solid #0000004d;
+    background: #459a48;
+    color: white;
+}
+.button input:hover{
+    background: #215b25;
+    transform: translate(0, 2px);
+}
+h1{
+    text-align: center;
+}
+.add{
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #4cac50;
+    color: #fff;
+    border-radius: 10px;
+    text-decoration: none;
+}
+.add:hover {
+    background-color: #215b25;
+    color: #fff;
+    transform: translate(0, 2px);
+}
+
+.container {
+    display: grid;
+    grid-auto-flow: row dense;
+    grid-template-columns: 250px 1fr 0.4fr;
+    grid-template-rows: 0.1fr 1fr 0.5fr 0.5fr;
+    gap: 5px 5px;
+    grid-template-areas:
+    "IMAGE Name Name"
+    "IMAGE description description"
+    "IMAGE price link"
+    "IMAGE price link2";
+    justify-content: space-evenly;
+    align-content: space-evenly;
+    padding: 10px;
+    margin: 10px;
+    border-radius: 5px;
+    box-shadow: 0 0 5px #ccc
+}
+.IMAGE { grid-area: IMAGE;
+    display: flex;
+    justify-content: center;
+    align-items: center}
+.Name {
+    grid-area: Name;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.price { grid-area: price; }
+.description { grid-area: description; }
+.link {
+    grid-area: link;
+    display: flex;
+    justify-content: center;
+    align-items: center
+}
+.link2 { grid-area: link2;
+    display: flex;
+    justify-content: center;
+    align-items: center
+}
