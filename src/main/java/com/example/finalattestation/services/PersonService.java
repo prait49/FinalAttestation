@@ -41,8 +41,7 @@ public class PersonService {
         Person existingPerson = personRepository.findById(id).orElseThrow(() -> new RuntimeException("Пользователь не найден"));
         existingPerson.setRole(role);
         personRepository.save(existingPerson);
-        System.out.println("Привет");
-        System.out.println(existingPerson);
+        System.out.println();
     }
 
     @Transactional

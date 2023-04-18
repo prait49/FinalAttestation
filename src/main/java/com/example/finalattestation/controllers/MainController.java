@@ -184,7 +184,6 @@ public class MainController {
         List<Cart> cartList = cartRepository.findByPersonId(id_person);
         List<Product> productList = new ArrayList<>();
 
-
         // Получаем продукты из корзины по id товара
         for (Cart cart : cartList) {
             productList.add(productService.getProductId(cart.getProductId()));

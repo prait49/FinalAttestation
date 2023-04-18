@@ -22,22 +22,24 @@
         <input type="submit" value="Выйти из личного кабинета">
     </form>
 </div>
-    <form th:method="POST" th:action="@{/admin/persons/edit/{id}(id=${persons.getId()})}" th:object="${persons}" class=persons>
-        <div>
-            <p th:text="'Id пользовалея : ' + ${persons.getId()}"></p>
-            <p th:text="'Логин пользователя: ' + ${persons.getLogin()}"></p>
-            <p th:text="'Роль пользователя: ' + ${persons.getRole()}"></p>
-        </div>
-        <div>
-            <label for="role">Изменить роль пользователя: </label>
-            <select id="role" name="role" th:field="*{role}">
-                <option value="ROLE_ADMIN">Администратор</option>
-                <option value="ROLE_USER">Пользователь</option>
-            </select>
-            <input type="submit" value="Редактировать" class="edit">
-        </div>
+<form th:method="POST" th:action="@{/admin/persons/edit/{id}(id=${persons.getId()})}" th:object="${persons}"
+      class=persons>
+    <div>
+        <p th:text="'Id пользовалея : ' + ${persons.getId()}"></p>
+        <p th:text="'Логин пользователя: ' + ${persons.getLogin()}"></p>
+        <p th:text="'Роль пользователя: ' + ${persons.getRole()}"></p>
+    </div>
+    <div>
+        <label for="role">Изменить роль пользователя: </label>
+        <select id="role" name="role" th:field="*{role}">
+            <option value="ROLE_ADMIN">ROLE_ADMIN</option>
+            <option value="ROLE_USER">ROLE_USER</option>
+        </select>
 
-    </form>
+        <input type="submit" value="Редактировать" class="edit">
+    </div>
+
+</form>
 
 
 </body>

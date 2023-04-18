@@ -204,8 +204,8 @@ public class AdminController {
     }
     //Метод для редактироания данных пользователя
     @PostMapping("/admin/persons/edit/{id}")
-    public String editPersons(@ModelAttribute("persons") @Valid String person, @PathVariable("id") int id){
-        personService.updatePersonRole(id, person);
+    public String editPersons(@ModelAttribute("persons") @RequestParam("role") String newRole, @PathVariable("id") int id){
+        personService.updatePersonRole(id, newRole);
         return  "redirect:/admin/persons";
     }
 
