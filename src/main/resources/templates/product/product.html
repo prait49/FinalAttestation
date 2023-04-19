@@ -7,6 +7,14 @@
 </head>
 <body>
 <h3> Сортировка, поиск, фильтрация </h3>
+<div class="button">
+    <form method="get" th:action="@{/authentication}">
+        <input type="submit" value="Войти в аккаунт"/>
+    </form>
+    <form method="get" th:action="@{/registration}">
+        <input type="submit" value="Регистриция"/>
+    </form>
+</div>
 <form th:method="POST" th:action="@{/product/search}">
     <fieldset>
         <legend>Выберите параметр для сортировки, поиска, фильтрации:</legend>
@@ -39,9 +47,8 @@
             <input type="submit" value="Найти">
         </div>
     </fieldset>
-    <hr>
 </form>
-
+<hr>
 <h3>Результат поиска, сортировки и фильтрации</h3>
 <div th:each="product : ${search_product}" class="productSearchNo" >
     <img th:src="'/img/' +${product.imageList[0].getFileName()}">

@@ -4,11 +4,14 @@ import com.example.finalattestation.enumm.Status;
 import com.example.finalattestation.models.*;
 import com.example.finalattestation.repository.CategoryRepository;
 import com.example.finalattestation.repository.OrderRepository;
+import com.example.finalattestation.security.PersonDetails;
 import com.example.finalattestation.services.OrderService;
 import com.example.finalattestation.services.PersonService;
 import com.example.finalattestation.services.ProductService;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
@@ -17,6 +20,8 @@ import org.springframework.web.multipart.MultipartFile;
 
 import java.io.File;
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.UUID;
 
 @Controller
@@ -193,7 +198,8 @@ public class AdminController {
     // Метод передающий данные пользователей на форму "//persons"
     @GetMapping("/admin/persons")
     public String personUser(Model model){
-        model.addAttribute("persons", personService.getAllPerson());
+            model.addAttribute("persons", personService.getAllPerson());
+        System.out.println(personService.getPersonId(1).getId()+" Привет");
         return "/persons";
     }
 
